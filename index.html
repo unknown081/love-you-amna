@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Notes</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #fff0f5;
+            text-align: center;
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        h1 {
+            color: #ff69b4;
+            font-family: 'Cursive', cursive;
+            font-size: 3em;
+            margin-bottom: 50px;
+        }
+        .notes-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .note {
+            background-color: #ffebcd;
+            border: 2px solid #ff69b4;
+            border-radius: 10px;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .note:hover {
+            transform: scale(1.1);
+        }
+        .message-popup {
+            display: none;
+            background-color: #fff;
+            color: #ff69b4;
+            border: 2px solid #ff69b4;
+            border-radius: 10px;
+            padding: 20px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+        .close-btn {
+            background-color: #ff69b4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .close-btn:hover {
+            background-color: #e75480;
+        }
+    </style>
+</head>
+<body>
+    <h1>Love Notes</h1>
+    <div class="notes-container">
+        <!-- Generate 10 notes -->
+        <div class="note" onclick="showMessage(1)">1</div>
+        <div class="note" onclick="showMessage(2)">2</div>
+        <div class="note" onclick="showMessage(3)">3</div>
+        <div class="note" onclick="showMessage(4)">4</div>
+        <div class="note" onclick="showMessage(5)">5</div>
+        <div class="note" onclick="showMessage(6)">6</div>
+        <div class="note" onclick="showMessage(7)">7</div>
+        <div class="note" onclick="showMessage(8)">8</div>
+        <div class="note" onclick="showMessage(9)">9</div>
+        <div class="note" onclick="showMessage(10)">10</div>
+    </div>
+
+    <div id="message-popup" class="message-popup">
+        <p id="message-text"></p>
+        <button class="close-btn" onclick="closeMessage()">Close</button>
+    </div>
+
+    <script>
+        const messages = [
+            "You light up my life.",
+            "You are my sunshineeeeeee.",
+            "You always be there for mee.",
+            "You are my everything literally.",
+            "You make me laugh sm.",
+            "You are my best friend.",
+            "You always make me feel better.",
+            "You make every day better.",
+            "Your so loving and sweet.",
+            "You have sticked by my side for 9 YEARS!."
+        ];
+
+        function showMessage(index) {
+            document.getElementById('message-text').innerText = messages[index - 1];
+            document.getElementById('message-popup').style.display = 'block';
+        }
+
+        function closeMessage() {
+            document.getElementById('message-popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
